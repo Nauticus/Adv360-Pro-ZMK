@@ -4,11 +4,11 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
-#DEFINE DEFAULT 0
-#DEFINE KEYPAD 1
-#DEFINE FN 2
-#DEFINE MOD 3
-#DEFINE SYMBOLS 4
+#define DEFAULT 0
+#define KEYPAD 1
+#define FN 2
+#define MOD 3
+#define SYMBOLS 4
 
 / {
     behaviors {
