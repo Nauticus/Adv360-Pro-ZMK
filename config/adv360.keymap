@@ -48,7 +48,7 @@
             label = "BRACKETS";
              #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LBRK>, <&kp RBRK>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
         };
     };
     keymap {
