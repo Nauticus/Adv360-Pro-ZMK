@@ -42,7 +42,7 @@
             quick_tap_ms = <175>;
             flavor = "balanced";
             bindings = <&kp BSPC>, <&mo SYMBOLS>;
-        }
+        };
     };
     keymap {
         compatible = "zmk,keymap";
