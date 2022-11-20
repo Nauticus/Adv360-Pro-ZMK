@@ -38,7 +38,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "SYMBOLS_BSPC";
             #binding-cells = <0>;
-            tapping-term-ms = <200>
+            tapping-term-ms = <200>;
             quick_tap_ms = <175>;
             flavor = "balanced";
             bindings = <&kp BSPC>, <&mo SYMBOLS>;
