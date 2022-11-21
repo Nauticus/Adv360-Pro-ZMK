@@ -86,7 +86,7 @@
             bindings = <
                 &trans &trans    &trans    &trans    &trans    &trans   &tog KEYPAD                                                       &trans  &trans    &trans    &trans    &trans   &trans    &trans
                 &trans &kp GRAVE &kp LT    &kp APOS  &kp GT    &kp FSLH &none                                                             &none   &kp BSLH  &kp LBKT  &kp UNDER &kp RBKT &kp PIPE  &trans
-                &trans &kp EXCL  &kp LPAR  &kp DQT   &kp RPAR  &kp PLUS &none              &trans &trans             &trans &trans        &none   &kp MINUS &kp LBRC  &kp EQUAL &kp LBRC &kp QMARK &trans
+                &trans &kp EXCL  &kp LPAR  &kp DQT   &kp RPAR  &kp PLUS &none              &trans &trans             &trans &trans        &none   &kp MINUS &kp LBRC  &kp EQUAL &kp RBRC &kp QMARK &trans
                 &trans &kp AT    &kp HASH  &kp DLLR  &kp COLON &kp STAR             &none  &none  &trans &none &none &trans &none  &none          &kp TILDE &kp DOT   &kp PRCNT &kp AMPS &kp CARET &trans
                 &trans &trans    &trans    &trans    &trans                         &trans &trans &trans             &trans &trans &trans                   &trans    &trans    &trans   &trans    &trans
             >;
