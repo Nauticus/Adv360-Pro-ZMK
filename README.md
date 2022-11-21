@@ -4,6 +4,9 @@
 
 There is a GUI for editing the keymap. It is available at https://kinesiscorporation.github.io/Adv360-Pro-GUI
 
+#### Symbols Layer
+![image](https://user-images.githubusercontent.com/7014149/203162287-2dc99532-7c15-4738-9a24-e5ffe449c2fc.png)
+
 ## Building the Firmware with GitHub Actions
 
 ### Setup
