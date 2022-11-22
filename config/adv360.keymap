@@ -9,7 +9,7 @@
 #define FN 2
 #define MOD 3
 #define SYMBOLS 4
-#define MACOS 4
+#define MACOS 5
 
 //MACOS
 //Screenshot
@@ -22,7 +22,20 @@
 #define MC_LS LC(LEFT)
 #define MC_RS LC(RIGHT)
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 / {
+    combos {
+        compatable = "zmk,combos";
+
+        caps_word_combo {
+            timeout-ms = <50>;
+            key-positions = <46 64>;
+            bindings = <&caps_word>;
+        };
+    };
     behaviors {
         #include "macros.dtsi"
         hm: homerow_mods {
@@ -89,6 +102,15 @@
                 &trans &kp EXCL  &kp LPAR  &kp DQT   &kp RPAR  &kp PLUS &none              &trans &trans             &trans &trans        &none   &kp MINUS &kp LBRC  &kp EQUAL &kp RBRC &kp QMARK &trans
                 &trans &kp AT    &kp HASH  &kp DLLR  &kp COLON &kp STAR             &none  &none  &trans &none &none &trans &none  &none          &kp TILDE &kp DOT   &kp PRCNT &kp AMPS &kp CARET &trans
                 &trans &trans    &trans    &trans    &trans                         &trans &trans &trans             &trans &trans &trans                   &trans    &trans    &trans   &trans    &trans
+            >;
+        };
+        macos {
+            bindings = <
+                &trans &trans &trans &trans &trans &trans &tog KEYPAD                                                         &mo MOD &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &none                                                               &none   &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &none              &trans &trans             &trans &trans          &none   &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans             &none  &none  &trans &none &none &trans &none  &none            &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans                    &trans &trans &trans             &trans &trans &trans                  &trans &trans &trans &trans &trans
             >;
         };
     };
