@@ -1,0 +1,68 @@
+#define t__ &trans
+#define x__ &trans
+
+#define HYP LG(LA(LCTRL))
+
+#define BOOT &bootloader
+#define BS &rgb_ug RGB_MEFS_CMD 5
+
+def {
+    bindings = <
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4    &kp N5 &tog NUM                                                                               &mo MOD &kp N6 &kp N7   &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R     &kp T  x__                                                                                    x__     &kp Y  &kp U    &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   &kp A     &kp S    &kp D    &kp F     &kp G  x__                     &kp LCTRL &kp LALT         &kp LGUI  &kp RCTRL                 x__     &kp H  &kp J    &kp K     &kp L    &kp SEMI &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V     &kp B           x__            x__       &kp HOME x__ x__ &kp PG_UP x__       x__                     &kp N  &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo FUN   &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &lt SYM BSPC &kp LCTRL &kp END          &kp PG_DN &kp ENTER &lt NAV SPACE                &kp DOWN &kp UP    &kp LBKT &kp RBKT &mo FUN
+    >;
+};
+nav {
+    bindings = <
+        t__ t__      t__      t__       t__       t__ &tog NUM                                 &mo MOD t__      t__       t__       t__       t__ t__
+        t__ t__      t__      t__       t__       t__ x__                                      x__     t__      &kp BSPC  &kp DEL   t__       t__ t__
+        t__ &sk LGUI &sk LALT &sk LSHFT &sk LCTRL t__ x__          t__ t__         t__ t__     x__     &kp LEFT &kp DOWN  &kp UP    &kp RIGHT t__ t__
+        t__ &sk HYP  t__      t__       t__       t__          x__ x__ t__ x__ x__ t__ x__ x__         t__      &kp TAB   &kp GRAVE t__       t__ t__
+        t__ t__      t__      t__       t__                    t__ t__ t__         t__ t__ t__                  t__       t__       t__       t__ t__
+    >;
+};
+sym {
+    bindings = <
+        t__ t__       t__       t__       t__       t__      &tog NUM                                 t__   t__       t__       t__       t__      t__       t__
+        t__ &kp GRAVE &kp LT    &kp APOS  &kp GT    &kp FSLH x__                                      x__   &kp BSLH  &kp LBKT  &kp UNDER &kp RBKT &kp PIPE  t__
+        t__ &kp EXCL  &kp LPAR  &kp DQT   &kp RPAR  &kp PLUS x__          t__ t__         t__ t__     x__   &kp MINUS &kp LBRC  &kp EQUAL &kp RBRC &kp QMARK t__
+        t__ &kp AT    &kp HASH  &kp DLLR  &kp DOT   &kp STAR          x__ x__ t__ x__ x__ t__ x__ x__       &kp TILDE &kp COLON &kp PRCNT &kp AMPS &kp CARET t__
+        t__ t__       t__       t__       t__                         t__ t__ t__         t__ t__ t__                 t__       t__       t__      t__       t__
+    >;
+};
+num {
+    bindings = <
+        t__ t__ t__ t__ t__ t__ t__                                 &mo MOD t__ &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY t__
+        t__ t__ t__ t__ t__ t__ x__                                 x__     t__ &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    t__
+        t__ t__ t__ t__ t__ t__ x__     t__ t__         t__ t__     x__     t__ &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     t__
+        t__ t__ t__ t__ t__ t__     x__ x__ t__ x__ x__ t__ x__ x__         t__ &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    t__
+        t__ t__ t__ t__ t__         t__ t__ t__         t__ t__ t__             &kp KP_N0  &kp COMMA    &kp KP_DOT    x__             t__
+    >;
+};
+fun {
+    bindings = <
+        &kp F1 &kp F2 &kp F3 &kp F4     &kp F5     &kp F6 &tog NUM                                      &mo MOD &kp F7 &kp F8       &kp F9       &kp F10 &kp F11 &kp F12
+        t__    t__    t__    t__        t__        t__    x__                                           x__     t__    t__          t__          t__     t__     t__
+        t__    t__    t__    t__        t__        t__    x__          t__ t__         t__ t__          x__     t__    t__          t__          t__     t__     t__
+        t__    t__    t__    t__        t__        t__             x__ x__ t__ x__ x__ t__ x__ x__              t__    t__          t__          t__     t__     t__
+        t__    t__    t__    &kp C_PREV &kp C_NEXT                 t__ t__ t__         t__ t__ &kp C_PP                &kp C_VOL_DN &kp C_VOL_UP t__     t__     t__
+    >;
+};
+mod {
+    bindings = <
+        x__   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 x__                                                                                          t__  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 x__  
+        x__   x__          x__          x__          x__          x__          BOOT                                                                                         BOOT x__          x__          x__          x__          x__          x__  
+        x__   x__          x__          x__          x__          x__          BS                   &bt BT_CLR &bt BT_CLR             &bt BT_CLR &bt BT_CLR                 BS   x__          x__          x__          x__          x__          x__  
+        x__   x__          x__          x__          x__          x__               x__             x__        x__        x__   x__   x__        x__        x__                  x__          x__          x__          x__          x__          x__  
+        x__   x__          x__          &bl BL_INC   &bl BL_DEC                     &rgb_ug RGB_TOG &bl BL_TOG x__                    x__        &bl BL_TOG &rgb_ug RGB_TOG                   &bl BL_DEC   &bl BL_INC   x__          x__          x__  
+    >;
+};
+
+#undef t__
+#undef x__
+#undef BOOT
+#undef BS
+
