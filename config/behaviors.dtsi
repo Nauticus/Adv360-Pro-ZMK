@@ -87,4 +87,26 @@ qtkp: quick_tap_keypress {
     flavor = "tap-preferred";
     bindings = <&kp>, <&kp>;
 };
-
+bspcdel: bspc_del {
+    compatible = "zmk,behavior-mod-morph";
+    label = "BACKSPACE_DELETE";
+    #binding-cells = <0>;
+    bindings = <&kp BSPC>, <&kp DEL>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+symret: sym_ret {
+    compatible = "zmk,behavior-tap-dance";
+    label = "SYMBOLS_RETURN";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&mo SYM>, <&kp ENTER>;
+};
+hthp: hold_tap_hold_preferred {
+    compatible = "zmk,behavior-hold-tap";
+    label = "HOLD_TAP_HOLD_PREFERRED";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <100>;
+    flavor = "hold-preferred";
+    bindings = <&mo>, <&kp>;
+};
