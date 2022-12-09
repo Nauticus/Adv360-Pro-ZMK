@@ -3,8 +3,9 @@
 #define THUMB_KEYS 35 36 37 38 52 53 54 55 56 57 58 59 71 72 73 74 75 76
 
 #define TAPPING_TERM_HOMEROW 200
-#define TAPPING_TERM_THUMB_KEYS 250
-#define QUICK_TAP_HOMEROW 175
+#define TAPPING_TERM_THUMB_KEYS 200
+#define QUICK_TAP_HOMEROW 100
+#define QUICK_TAP_THUMB 180
 
 lhm: left_homerow_mods {
     compatible = "zmk,behavior-hold-tap";
@@ -17,49 +18,18 @@ lhm: left_homerow_mods {
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
 };
-rhm: right_homerow_mods {
-    compatible = "zmk,behavior-hold-tap";
-    label = "RIGHT_HOMEROW_MODS";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_HOMEROW>;
-    quick-tap-ms = <QUICK_TAP_HOMEROW>;
-    global-quick-tap;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
-};
-lhl: left_homerow_layer {
-    compatible = "zmk,behavior-hold-tap";
-    label = "LEFT_HOMEROW_LAYER";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_HOMEROW>;
-    quick-tap-ms = <QUICK_TAP_HOMEROW>;
-    global-quick-tap;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&kp>;
-    hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
-};
-rhl: right_homerow_layer {
-    compatible = "zmk,behavior-hold-tap";
-    label = "RIGHT_HOMEROW_LAYER";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_HOMEROW>;
-    quick-tap-ms = <QUICK_TAP_HOMEROW>;
-    global-quick-tap;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&kp>;
-    hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
-};
+
 thht: thumb_keys_hold_tap {
     compatible = "zmk,behavior-hold-tap";
     label = "RIGHT_HOMEROW_LAYER";
     #binding-cells = <2>;
     tapping-term-ms = <TAPPING_TERM_THUMB_KEYS>;
-    quick-tap-ms = <QUICK_TAP_HOMEROW>;
+    quick-tap-ms = <QUICK_TAP_THUMB>;
     global-quick-tap;
     flavor = "tap-preferred";
     bindings = <&mo>, <&kp>;
 };
+
 hm: homerow_mods {
     compatible = "zmk,behavior-hold-tap";
     label = "HOMEROW_MODS";
@@ -69,24 +39,7 @@ hm: homerow_mods {
     flavor = "tap-preferred";
     bindings = <&kp>, <&kp>;
 };
-qtl: quick_tap_layer {
-    compatible = "zmk,behavior-hold-tap";
-    label = "QUICK_TAP_LAYER";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick_tap_ms = <175>;
-    flavor = "balanced";
-    bindings = <&mo>, <&kp>;
-};
-qtkp: quick_tap_keypress {
-    compatible = "zmk,behavior-hold-tap";
-    label = "QUICK_TAP_KEYPRESS";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick_tap_ms = <175>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
+
 bspcdel: bspc_del {
     compatible = "zmk,behavior-mod-morph";
     label = "BACKSPACE_DELETE";
@@ -94,19 +47,19 @@ bspcdel: bspc_del {
     bindings = <&kp BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
-symret: sym_ret {
+
+lstapd: left_shift_tap_dance {
     compatible = "zmk,behavior-tap-dance";
-    label = "SYMBOLS_RETURN";
+    label = "LEFT_SHIFT_TAP_DANCE";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
-    bindings = <&mo SYM>, <&kp ENTER>;
+    bindings = <&sk LSHFT>, <&caps_word>;
 };
-hthp: hold_tap_hold_preferred {
-    compatible = "zmk,behavior-hold-tap";
-    label = "HOLD_TAP_HOLD_PREFERRED";
-    #binding-cells = <2>;
+
+rstapd: right_shift_tap_dance {
+    compatible = "zmk,behavior-tap-dance";
+    label = "RIGHT_SHIFT_TAP_DANCE";
+    #binding-cells = <0>;
     tapping-term-ms = <200>;
-    quick-tap-ms = <100>;
-    flavor = "hold-preferred";
-    bindings = <&mo>, <&kp>;
+    bindings = <&sk RSHFT>, <&caps_word>;
 };

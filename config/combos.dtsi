@@ -7,22 +7,23 @@
  *  46 47 48 49 50 51    52 53 54 55 56 57 58 59    60 61 62 63 64 65
  *  66 67 68 69 70       71 72 73       74 75 76       77 78 79 80 81
  */
-combo_caps_word {
-    timeout-ms = <50>;
-    key-positions = <72 75>;
-    bindings = <&caps_word>;
-};
+
+/* combo_caps_word { */
+/*     timeout-ms = <50>; */
+/*     key-positions = <31 42>; */
+/*     bindings = <&caps_word>; */
+/* }; */
 /* combo_esc {
     timeout-ms = <50>;
     key-positions = <41 42>;
     layers = <DEF SYM NUM>;
     bindings = <&kp ESC>;
 }; */
-combo_bspc {
+/* combo_bspc {
     timeout-ms = <35>;
     key-positions = <41 42>;
     bindings = <&bspcdel>;
-};
+}; */
 /* combo_page_up {
     timeout-ms = <50>;
     key-positions = <25 26>;

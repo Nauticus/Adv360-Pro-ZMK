@@ -9,14 +9,11 @@
     continue-list = <UNDERSCORE MINUS BACKSPACE>;
 };
 
+&sk {
+    quick-release;
+};
+
 / {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <NAV SYM>;
-            then-layer = <NUM>;
-        };
-    };
     combos {
         compatible = "zmk,combos";
         #include "combos.dtsi"
