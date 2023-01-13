@@ -1,3 +1,5 @@
+#define str(s) #s
+
 #define LEFT_KEYS 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 46 47 48 49 50 51 66 67 68 69 70
 #define RIGHT_KEYS 7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 60 61 62 63 64 65 77 78 79 80 81
 #define THUMB_KEYS 35 36 37 38 52 53 54 55 56 57 58 59 71 72 73 74 75 76
@@ -7,16 +9,53 @@
 #define QUICK_TAP_HOMEROW 100
 #define QUICK_TAP_THUMB 180
 
+#define MOD_MORPH(NAME, KEY, MOD_KEY, MODS) \
+  mm_##NAME: mm_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = str(NAME); \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <MODS>; \
+  };
+
+/* Programmer's Dvorak shifts morphs */
+MOD_MORPH(dllr_hash,  DLLR,  HASH,  (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n1_plus,    PLUS,  N1,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n2_lbkt,    LBKT,  N2,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n3_lbrc,    LBRC,  N3,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n4_lpar,    LPAR,  N4,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n5_amps,    AMPS,  N5,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n6_equal,   EQUAL, N6,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n7_rpar,    RPAR,  N7,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n8_rbrc,    RBRC,  N8,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n9_rbkt,    RBKT,  N9,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(n0_star,    STAR,  N0,    (MOD_LSFT|MOD_RSFT))
+MOD_MORPH(excl_prcnt, EXCL,  PRCNT, (MOD_LSFT|MOD_RSFT))
+
+MOD_MORPH(at_caret,   AT,    CARET, (MOD_LSFT|MOD_RSFT))
+
 lhm: left_homerow_mods {
     compatible = "zmk,behavior-hold-tap";
     label = "LEFT_HOMEROW_MODS";
     #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_HOMEROW>;
-    quick-tap-ms = <QUICK_TAP_HOMEROW>;
+    tapping-term-ms = <100>;
+    quick-tap-ms = <200>;
     global-quick-tap;
-    flavor = "tap-preferred";
+    flavor = "tap-unless-interrupted";
     bindings = <&kp>, <&kp>;
     hold-trigger-key-positions = <RIGHT_KEYS THUMB_KEYS>;
+};
+
+rhm: right_homerow_mods {
+    compatible = "zmk,behavior-hold-tap";
+    label = "RIGHT_HOMEROW_MODS";
+    #binding-cells = <2>;
+    tapping-term-ms = <100>;
+    quick-tap-ms = <200>;
+    global-quick-tap;
+    flavor = "tap-unless-interrupted";
+    bindings = <&kp>, <&kp>;
+    hold-trigger-key-positions = <LEFT_KEYS THUMB_KEYS>;
 };
 
 thht: thumb_keys_hold_tap {
@@ -53,7 +92,7 @@ lstapd: left_shift_tap_dance {
     label = "LEFT_SHIFT_TAP_DANCE";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
-    bindings = <&sk LSHFT>, <&caps_word>;
+    bindings = <&kp LSHFT>, <&caps_word>;
 };
 
 rstapd: right_shift_tap_dance {
@@ -61,5 +100,5 @@ rstapd: right_shift_tap_dance {
     label = "RIGHT_SHIFT_TAP_DANCE";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
-    bindings = <&sk RSHFT>, <&caps_word>;
+    bindings = <&kp RSHFT>, <&caps_word>;
 };

@@ -1,6 +1,7 @@
 #define DEF 0
-#define NAV 1
-#define SYM 2
-#define NUM 3
-#define FUN 4
-#define MOD 5
+#define QWE 1
+#define NAV 2
+#define SYM 3
+#define NUM 4
+#define FUN 5
+#define MOD 6

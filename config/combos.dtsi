@@ -8,11 +8,11 @@
  *  66 67 68 69 70       71 72 73       74 75 76       77 78 79 80 81
  */
 
-/* combo_caps_word { */
-/*     timeout-ms = <50>; */
-/*     key-positions = <31 42>; */
-/*     bindings = <&caps_word>; */
-/* }; */
+combo_caps_word {
+    timeout-ms = <50>;
+    key-positions = <29 44>;
+    bindings = <&caps_word>;
+};
 /* combo_esc {
     timeout-ms = <50>;
     key-positions = <41 42>;

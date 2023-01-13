@@ -9,6 +9,10 @@
     continue-list = <UNDERSCORE MINUS BACKSPACE>;
 };
 
+&lt {
+    quick-tap-ms = <200>;
+};
+
 &sk {
     quick-release;
 };
