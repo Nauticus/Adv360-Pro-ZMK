@@ -6,7 +6,8 @@
 #include "layers.dtsi"
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS BACKSPACE>;
+    continue-list = <UNDERSCORE MINUS BACKSPACE LSHFT RSHFT>;
+    /delete-property/ ignore-modifiers;
 };
 
 &lt {

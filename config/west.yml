@@ -2,12 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: refil
-      url-base: https://github.com/refil
+    - name: nauticus
+      url-base: https://github.com/Nauticus
   projects:
     - name: zmk
-      remote: refil
-      revision: adv360-z3.2
+      remote: nauticus
+      revision: main
       import: app/west.yml
   self:
     path: config
